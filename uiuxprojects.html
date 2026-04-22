@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UI/UX Projects | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    /* Sub-page specific extras */
+    .sub-page-uiux {
+      background: linear-gradient(160deg, #fff7f7 0%, #ffe8ec 100%);
+    }
+
+    .uiux-hero {
+      background: linear-gradient(135deg, #fff0f3, #ffd6e0);
+      padding: 5rem 0 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .uiux-hero::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(255,180,192,0.15);
+      top: -200px; right: -100px;
+      animation: floatBlob 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes floatBlob {
+      0%,100% { transform: scale(1) translate(0,0); }
+      50%      { transform: scale(1.05) translate(-20px, 15px); }
+    }
+
+    .uiux-hero .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #FF6B8A;
+      background: rgba(255,107,138,0.1);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1.25rem;
+    }
+    .uiux-hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .uiux-hero h1 em { font-style: italic; color: #FFB4C0; }
+    .uiux-hero p {
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      padding: 0.45rem 1.1rem;
+      border-radius: 40px;
+      border: 2px solid rgba(0,0,0,0.15);
+      background: transparent;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #FFB4C0;
+      border-color: #FFB4C0;
+      color: #000;
+    }
+
+    /* Project cards for sub-page */
+    .proj-card__img-area {
+      height: 220px;
+      background: linear-gradient(135deg, #fff0f3, #ffd6e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .proj-card__img-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .proj-card__img-area .placeholder-icon {
+      color: #FFB4C0;
+    }
+    .proj-card__badge {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #FFB4C0;
+      color: #000;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+    }
+
+    .tools-used {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+    .tools-used i { color: #FFB4C0; }
+
+    .proj-stats {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f0f0f0;
+    }
+    .proj-stat {
+      font-size: 0.75rem;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .proj-stat i { color: #86D2E2; }
+
+    /* Case study card */
+    .case-study {
+      background: #000;
+      color: #fff;
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .case-study h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+    .case-study h2 em { color: #FFB4C0; font-style: italic; }
+    .case-study p { color: #bbb; font-size: 0.9rem; }
+    .case-study__steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .case-step {
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #ddd;
+    }
+    .case-step i { color: #86D2E2; }
+
+    @media (min-width: 640px) {
+      .case-study { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body class="sub-page-uiux">
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <span class="logo-text">HD<span class="logo-dot">.</span></span>
+      </a>
+      <ul class="nav__list" id="navList">
+        <li><a href="index.html#home" class="nav__link">Home</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="index.html#projects" class="nav__link">Projects</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="uiux-hero">
+      <div class="container">
+        <div class="reveal">
+          <a href="index.html#projects" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+          </a>
+        </div>
+        <div class="hero-tag reveal">
+          <i class="fa-solid fa-pen-ruler"></i> Design Portfolio
+        </div>
+        <h1 class="reveal">UI/UX <em>Design</em> Projects</h1>
+        <p class="reveal">A curated collection of user-centered design work — from wireframes and prototypes to complete design systems crafted in Figma.</p>
+
+        <!-- Filter Buttons -->
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="app">Mobile App</button>
+          <button class="filter-btn" data-filter="web">Web Design</button>
+          <button class="filter-btn" data-filter="system">Design System</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN PROCESS STRIP -->
+    <section class="section" style="padding: 2rem 0; background: #fff0f3;">
+      <div class="container">
+        <div class="case-study reveal">
+          <div>
+            <h2>My Design <em>Process</em></h2>
+            <p>Every project starts with research and ends with handoff. Here's how I approach design challenges systematically.</p>
+          </div>
+          <div>
+            <div class="case-study__steps">
+              <div class="case-step"><i class="fa-solid fa-magnifying-glass"></i> Research</div>
+              <div class="case-step"><i class="fa-solid fa-sitemap"></i> Information Arch</div>
+              <div class="case-step"><i class="fa-solid fa-pencil-ruler"></i> Wireframing</div>
+              <div class="case-step"><i class="fa-solid fa-swatchbook"></i> Visual Design</div>
+              <div class="case-step"><i class="fa-solid fa-play"></i> Prototyping</div>
+              <div class="case-step"><i class="fa-solid fa-users"></i> User Testing</div>
+              <div class="case-step"><i class="fa-solid fa-file-export"></i> Handoff</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS GRID -->
+    <section class="section sub-page">
+      <div class="container">
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1 -->
+          <div class="proj-card reveal" data-category="app">
+            <div class="proj-card__img-area">
+              <!-- <img src="your-project-screenshot.jpg" alt="Food Delivery App"> -->
+              <i class="fa-solid fa-utensils placeholder-icon"></i>
+              <span class="proj-card__badge">Mobile App</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tools-used">
+                <i class="fa-brands fa-figma"></i> Figma · Prototyping · User Research
+              </div>
+              <h3>Food Delivery App Redesign</h3>
+              <p>Redesigned the complete user flow of a food delivery application — reducing order time by 35% and improving user satisfaction scores.</p>
+              <div class="proj-card__tags">
+                <span>UX Research</span><span>Wireframing</span><span>Prototyping</span><span>Figma</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-users"></i> 20 User Tests</span>
+                <span class="proj-stat"><i class="fa-solid fa-layer-group"></i> 48 Screens</span>
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 4 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-brands fa-figma"></i> View in Figma</a>
+                <a href="#" class="link-code"><i class="fa-solid fa-book-open"></i> Case Study</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="proj-card reveal" data-category="web">
+            <div class="proj-card__img-area">
+              <!-- <img src="your-project-screenshot.jpg" alt="E-commerce"> -->
+              <i class="fa-solid fa-bag-shopping placeholder-icon"></i>
+              <span class="proj-card__badge">Web Design</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tools-used">
+                <i class="fa-brands fa-figma"></i> Figma · Auto Layout · Components
+              </div>
+              <h3>E-Commerce Website UI</h3>
+              <p>Designed a modern e-commerce experience with a focus on conversion optimization, accessibility, and brand consistency.</p>
+              <div class="proj-card__tags">
+                <span>UI Design</span><span>Component Library</span><span>Responsive</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-layer-group"></i> 32 Screens</span>
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 3 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-brands fa-figma"></i> View in Figma</a>
+                <a href="#" class="link-code"><i class="fa-solid fa-book-open"></i> Case Study</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="proj-card reveal" data-category="system">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-swatchbook placeholder-icon"></i>
+              <span class="proj-card__badge">Design System</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tools-used">
+                <i class="fa-brands fa-figma"></i> Figma · Variables · Component API
+              </div>
+              <h3>Design System — DesignKit</h3>
+              <p>Built a scalable design system with 80+ components, a comprehensive token system, and thorough documentation for developer handoff.</p>
+              <div class="proj-card__tags">
+                <span>Design Tokens</span><span>Components</span><span>Documentation</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-cube"></i> 80+ Components</span>
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 6 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-brands fa-figma"></i> View in Figma</a>
+                <a href="#" class="link-code"><i class="fa-solid fa-book-open"></i> Case Study</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="proj-card reveal" data-category="app">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-heartbeat placeholder-icon"></i>
+              <span class="proj-card__badge">Mobile App</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tools-used">
+                <i class="fa-brands fa-figma"></i> Figma · User Flows · Accessibility
+              </div>
+              <h3>Health & Fitness App UI</h3>
+              <p>Designed a wellness tracking app that balances rich data visualization with a calm, motivating user experience.</p>
+              <div class="proj-card__tags">
+                <span>Mobile UX</span><span>Data Viz</span><span>Accessibility</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-layer-group"></i> 38 Screens</span>
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 5 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-brands fa-figma"></i> View in Figma</a>
+                <a href="#" class="link-code"><i class="fa-solid fa-book-open"></i> Case Study</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="proj-card reveal" data-category="web">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-briefcase placeholder-icon"></i>
+              <span class="proj-card__badge">Web Design</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tools-used">
+                <i class="fa-brands fa-figma"></i> Figma · Interaction Design
+              </div>
+              <h3>SaaS Dashboard Redesign</h3>
+              <p>Redesigned a complex analytics dashboard improving information hierarchy and reducing cognitive load for data-heavy users.</p>
+              <div class="proj-card__tags">
+                <span>Dashboard</span><span>UX Audit</span><span>Information Architecture</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-layer-group"></i> 25 Screens</span>
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 4 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-brands fa-figma"></i> View in Figma</a>
+                <a href="#" class="link-code"><i class="fa-solid fa-book-open"></i> Case Study</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="proj-card reveal" data-category="app">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-graduation-cap placeholder-icon"></i>
+              <span class="proj-card__badge">Mobile App</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tools-used">
+                <i class="fa-brands fa-figma"></i> Figma · Micro-interactions
+              </div>
+              <h3>EdTech Learning App</h3>
+              <p>Designed an engaging mobile learning platform with gamification elements and personalized learning paths.</p>
+              <div class="proj-card__tags">
+                <span>Gamification</span><span>Onboarding</span><span>Micro-interactions</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-layer-group"></i> 44 Screens</span>
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 5 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-brands fa-figma"></i> View in Figma</a>
+                <a href="#" class="link-code"><i class="fa-solid fa-book-open"></i> Case Study</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /projectsGrid -->
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="footer__logo">Harshraj Dodiya<span>.</span></a>
+      <p class="footer__copy">Crafted with <i class="fa-solid fa-heart"></i> by <strong>HG DODIYA</strong> © 2025</p>
+      <a href="#" class="footer__top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#projectsGrid .proj-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const cat = card.dataset.category;
+          if (filter === 'all' || cat === filter) {
+            card.style.display = '';
+            card.style.animation = 'fadeInUp 0.4s ease forwards';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Add fadeInUp keyframe
+    const st = document.createElement('style');
+    st.textContent = `
+      @keyframes fadeInUp {
+        from { opacity:0; transform:translateY(20px); }
+        to   { opacity:1; transform:translateY(0); }
+      }
+    `;
+    document.head.appendChild(st);
+  </script>
+</body>
+</html>

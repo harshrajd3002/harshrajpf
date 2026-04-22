@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Projects | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    .sub-page-fe {
+      background: linear-gradient(160deg, #f0fafd 0%, #e0f4f9 100%);
+    }
+
+    .fe-hero {
+      background: linear-gradient(135deg, #e8f8fc 0%, #c8eef7 100%);
+      padding: 5rem 0 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fe-hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(134, 210, 226, 0.18);
+      top: -200px;
+      left: -100px;
+      animation: floatBlob 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatBlob {
+
+      0%,
+      100% {
+        transform: scale(1) translate(0, 0);
+      }
+
+      50% {
+        transform: scale(1.05) translate(20px, 15px);
+      }
+    }
+
+    .fe-hero .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #1a9bba;
+      background: rgba(26, 155, 186, 0.1);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1.25rem;
+    }
+
+    .fe-hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .fe-hero h1 em {
+      font-style: italic;
+      color: #86D2E2;
+    }
+
+    .fe-hero p {
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      padding: 0.45rem 1.1rem;
+      border-radius: 40px;
+      border: 2px solid rgba(0, 0, 0, 0.15);
+      background: transparent;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #86D2E2;
+      border-color: #86D2E2;
+      color: #000;
+    }
+
+    /* Image area for FE projects */
+    .proj-card__img-area {
+      height: 220px;
+      background: linear-gradient(135deg, #e8f8fc, #c8eef7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-card__img-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .proj-card__img-area .placeholder-icon {
+      color: #86D2E2;
+    }
+
+    .proj-card__badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #86D2E2;
+      color: #000;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+    }
+
+    .tech-stack {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+
+    .tech-stack i {
+      color: #86D2E2;
+    }
+
+    .proj-stats {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .proj-stat {
+      font-size: 0.75rem;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .proj-stat i {
+      color: #FFB4C0;
+    }
+
+    /* Tech banner */
+    .tech-banner {
+      background: #000;
+      color: #fff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      margin: 0 0 3rem;
+    }
+
+    .tech-banner h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-banner h2 em {
+      font-style: italic;
+      color: #86D2E2;
+    }
+
+    .tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tech-chip {
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      background: rgba(134, 210, 226, 0.12);
+      border: 1px solid rgba(134, 210, 226, 0.3);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #86D2E2;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: 0.3s;
+    }
+
+    .tech-chip:hover {
+      background: rgba(134, 210, 226, 0.25);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body class="sub-page-fe">
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <span class="logo-text">HD<span class="logo-dot">.</span></span>
+      </a>
+      <ul class="nav__list" id="navList">
+        <li><a href="index.html#home" class="nav__link">Home</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="index.html#projects" class="nav__link">Projects</a></li>
+        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="fe-hero">
+      <div class="container">
+        <div class="reveal">
+          <a href="index.html#projects" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+          </a>
+        </div>
+        <div class="hero-tag reveal">
+          <i class="fa-solid fa-code"></i> Dev Portfolio
+        </div>
+        <h1 class="reveal">Frontend <em>Development</em> Projects</h1>
+        <p class="reveal">Interactive applications and websites built with modern tech stacks — from animated landing
+          pages to full-stack web apps.</p>
+
+        <!-- Filter -->
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="react">React</button>
+          <button class="filter-btn" data-filter="next">Next.js</button>
+          <button class="filter-btn" data-filter="three">Three.js</button>
+          <button class="filter-btn" data-filter="vanilla">Vanilla JS</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sub-page">
+      <div class="container">
+
+        <!-- Tech Banner -->
+        <div class="tech-banner reveal">
+          <h2>Technologies I <em>Build With</em></h2>
+          <div class="tech-chips">
+            <span class="tech-chip"><i class="fa-brands fa-react"></i> React</span>
+            <span class="tech-chip">▲ Next.js</span>
+            <span class="tech-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="tech-chip">TS TypeScript</span>
+            <span class="tech-chip">🌊 Tailwind CSS</span>
+            <span class="tech-chip">● Three.js</span>
+            <span class="tech-chip"><i class="fa-brands fa-node-js"></i> Express</span>
+            <span class="tech-chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+            <span class="tech-chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1 -->
+          <div class="proj-card reveal" data-category="three">
+            <div class="proj-card__img-area">
+              <!-- <img src="3d-project.jpg" alt="3D Portfolio"> -->
+              <i class="fa-solid fa-globe placeholder-icon"></i>
+              <span class="proj-card__badge">Three.js</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tech-stack">
+                <i class="fa-solid fa-layer-group"></i> Three.js · React · GSAP
+              </div>
+              <h3>3D Interactive Portfolio</h3>
+              <p>A visually immersive 3D portfolio built with Three.js featuring scroll-driven animations, custom
+                shaders, and a particle background.</p>
+              <div class="proj-card__tags">
+                <span>Three.js</span><span>GSAP</span><span>WebGL</span><span>React</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-star"></i> Featured</span>
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 3 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="link-code"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="proj-card reveal" data-category="next">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-store placeholder-icon"></i>
+              <span class="proj-card__badge">Next.js</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tech-stack">
+                <i class="fa-solid fa-layer-group"></i> Next.js · TypeScript · Tailwind
+              </div>
+              <h3>Full-Stack E-Commerce App</h3>
+              <p>A complete e-commerce platform with product listings, cart, authentication, and Stripe payment
+                integration.</p>
+              <div class="proj-card__tags">
+                <span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>Stripe</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-star"></i> Featured</span>
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 5 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="link-code"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="proj-card reveal" data-category="react">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-chart-line placeholder-icon"></i>
+              <span class="proj-card__badge">React</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tech-stack">
+                <i class="fa-solid fa-layer-group"></i> React · Redux · Chart.js
+              </div>
+              <h3>Analytics Dashboard</h3>
+              <p>A feature-rich dashboard for real-time data visualization with interactive charts, filters, and
+                exportable reports.</p>
+              <div class="proj-card__tags">
+                <span>React</span><span>Redux</span><span>Chart.js</span><span>REST API</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 4 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="link-code"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="proj-card reveal" data-category="vanilla">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-music placeholder-icon"></i>
+              <span class="proj-card__badge">Vanilla JS</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tech-stack">
+                <i class="fa-solid fa-layer-group"></i> HTML · CSS · JavaScript
+              </div>
+              <h3>Music Player UI</h3>
+              <p>A beautiful, fully-functional music player with playlist support, waveform visualizer, and smooth
+                animations built in pure JS.</p>
+              <div class="proj-card__tags">
+                <span>Vanilla JS</span><span>Web Audio API</span><span>CSS Animations</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 2 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="link-code"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="proj-card reveal" data-category="react">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-comments placeholder-icon"></i>
+              <span class="proj-card__badge">React</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tech-stack">
+                <i class="fa-solid fa-layer-group"></i> React · Express · Socket.io
+              </div>
+              <h3>Real-Time Chat Application</h3>
+              <p>Full-stack real-time chat app with rooms, typing indicators, read receipts, and emoji support using
+                Socket.io.</p>
+              <div class="proj-card__tags">
+                <span>React</span><span>Express</span><span>Socket.io</span><span>MongoDB</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 3 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="link-code"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="proj-card reveal" data-category="next">
+            <div class="proj-card__img-area">
+              <i class="fa-solid fa-newspaper placeholder-icon"></i>
+              <span class="proj-card__badge">Next.js</span>
+            </div>
+            <div class="proj-card__body">
+              <div class="tech-stack">
+                <i class="fa-solid fa-layer-group"></i> Next.js · MDX · Tailwind CSS
+              </div>
+              <h3>Developer Blog Platform</h3>
+              <p>A performant blog with MDX support, syntax highlighting, dark/light mode, newsletter subscription, and
+                SEO optimization.</p>
+              <div class="proj-card__tags">
+                <span>Next.js</span><span>MDX</span><span>Tailwind</span><span>SEO</span>
+              </div>
+              <div class="proj-stats">
+                <span class="proj-stat"><i class="fa-solid fa-clock"></i> 2 Weeks</span>
+              </div>
+              <div class="proj-card__links" style="margin-top:1.25rem;">
+                <a href="#" class="link-demo"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="link-code"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /projectsGrid -->
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="footer__logo">Harshraj Dodiya<span>.</span></a>
+      <p class="footer__copy">Crafted with <i class="fa-solid fa-heart"></i> by <strong>HG DODIYA</strong> © 2025</p>
+      <a href="#" class="footer__top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#projectsGrid .proj-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const cat = card.dataset.category;
+          if (filter === 'all' || cat === filter) {
+            card.style.display = '';
+            card.style.animation = 'fadeInUp 0.4s ease forwards';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    const st = document.createElement('style');
+    st.textContent = `
+      @keyframes fadeInUp {
+        from { opacity:0; transform:translateY(20px); }
+        to   { opacity:1; transform:translateY(0); }
+      }
+    `;
+    document.head.appendChild(st);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Creative Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">
+        <!-- Replace with your logo image -->
+        <span class="logo-text">HD<span class="logo-dot">.</span></span>
+      </a>
+      <ul class="nav__list" id="navList">
+        <li><a href="#home" class="nav__link active">Home</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#education" class="nav__link">Education</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#certifications" class="nav__link">Certs</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="home section" id="home">
+      <div class="home__blob-1"></div>
+      <div class="home__blob-2"></div>
+      <div class="container home__container">
+        <div class="home__text">
+          <p class="home__greeting reveal">Hey there, I'm</p>
+          <h1 class="home__name reveal">Harshraj Dodiya<span class="accent">.</span></h1>
+          <h2 class="home__title reveal">
+            <span class="typed-text"></span><span class="cursor">|</span>
+          </h2>
+          <p class="home__desc reveal">
+            I craft beautiful, performant digital experiences — from pixel-perfect UI designs to full-stack web
+            applications.
+          </p>
+          <div class="home__btns reveal">
+            <a href="#projects" class="btn btn--primary">View Work</a>
+            <a href="#contact" class="btn btn--outline">Say Hello</a>
+          </div>
+        </div>
+        <div class="home__img-wrap reveal">
+          <div class="home__img-ring"></div>
+          <!-- Replace src with your actual photo path -->
+          <img src="img/profile.jpeg" alt="Your Name" class="home__img"
+            onerror="this.src='https://via.placeholder.com/340x400/ffcccc/000000?text=Your+Photo'" />
+          <div class="home__img-badge">
+            <i class="fa-solid fa-code"></i>
+            <span>Dev + Designer</span>
+          </div>
+        </div>
+      </div>
+      <div class="home__scroll">
+        <a href="#about"><i class="fa-solid fa-chevron-down bounce"></i></a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__tag">01 — About</span>
+          <h2 class="section__title">Who I <em>Am</em></h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__card reveal">
+            <div class="about__icon"><i class="fa-solid fa-user-astronaut"></i></div>
+            <h3>The Human</h3>
+            <p>A passionate developer and designer based in India, obsessed with clean code, beautiful interfaces, and
+              seamless user experiences.</p>
+          </div>
+          <div class="about__card reveal">
+            <div class="about__icon"><i class="fa-solid fa-palette"></i></div>
+            <h3>The Creator</h3>
+            <p>I bridge the gap between design and development — creating experiences that look stunning and work
+              flawlessly under the hood.</p>
+          </div>
+          <div class="about__card reveal">
+            <div class="about__icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3>The Builder</h3>
+            <p>From wireframes to deployment, I love the entire process of turning ideas into digital realities that
+              make an impact.</p>
+          </div>
+        </div>
+        <div class="about__quote reveal">
+          <blockquote>"Design is not just what it looks like and feels like. Design is how it works."</blockquote>
+          <cite>— Steve Jobs</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__tag">02 — Skills</span>
+          <h2 class="section__title">What I <em>Use</em></h2>
+        </div>
+        <div class="skills__grid">
+          <div class="skill__pill reveal" style="--i:1"><span class="skill__icon"><i
+                class="fa-brands fa-html5"></i></span><span>HTML5</span></div>
+          <div class="skill__pill reveal" style="--i:2"><span class="skill__icon"><i
+                class="fa-brands fa-css3-alt"></i></span><span>CSS3</span></div>
+          <div class="skill__pill reveal" style="--i:3"><span class="skill__icon"><i
+                class="fa-brands fa-js"></i></span><span>JavaScript</span></div>
+          <div class="skill__pill reveal" style="--i:4"><span class="skill__icon"><i
+                class="fa-brands fa-react"></i></span><span>React</span></div>
+          <div class="skill__pill reveal" style="--i:5"><span class="skill__icon">▲</span><span>Next.js</span></div>
+          <div class="skill__pill reveal" style="--i:6"><span class="skill__icon"><i
+                class="fa-brands fa-node-js"></i></span><span>Express</span></div>
+          <div class="skill__pill reveal" style="--i:7"><span class="skill__icon">●</span><span>Three.js</span></div>
+          <div class="skill__pill reveal" style="--i:8"><span class="skill__icon">TS</span><span>TypeScript</span></div>
+          <div class="skill__pill reveal" style="--i:9"><span class="skill__icon">🌊</span><span>Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education section" id="education">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__tag">03 — Education</span>
+          <h2 class="section__title">My <em>Journey</em></h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2023 – 2027</span>
+              <h3 class="timeline__title">Bachelor of Technology</h3>
+              <p class="timeline__sub">Marwadi University, Rajkot</p>
+              <p class="timeline__desc">Information Technology — CGPA: 7/10</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"><i class="fa-solid fa-school"></i></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2023</span>
+              <h3 class="timeline__title">Higher Secondary (12th)</h3>
+              <p class="timeline__sub">Sarathi Vidhyasankul, Bhavnagar</p>
+              <p class="timeline__desc">Science Stream — Percentile: 77</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"><i class="fa-solid fa-book-open"></i></div>
+            <div class="timeline__card">
+              <span class="timeline__year">2021</span>
+              <h3 class="timeline__title">Secondary (10th)</h3>
+              <p class="timeline__sub">swaminarayan Gurukul, Sardarnagar, Bhavnagar</p>
+              <p class="timeline__desc">Percentile: 94</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__tag">04 — Experience</span>
+          <h2 class="section__title">Where I've <em>Worked</em></h2>
+        </div>
+        <div class="exp__grid">
+          <div class="exp__card reveal">
+            <div class="exp__top">
+              <div class="exp__icon"><i class="fa-solid fa-briefcase"></i></div>
+              <span class="exp__date">May 2026 – Jun 2026</span>
+            </div>
+            <h3 class="exp__role">UI/UX Design Intern</h3>
+            <p class="exp__company"><i class="fa-solid fa-building"></i> BeainyBeem</p>
+            <ul class="exp__list">
+            </ul>
+          </div>
+          <div class="exp__card reveal">
+            <div class="exp__top">
+              <div class="exp__icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <span class="exp__date">Jun 2025</span>
+            </div>
+            <h3 class="exp__role">Frontend Developer Intern</h3>
+            <p class="exp__company"><i class="fa-solid fa-building"></i> Aksharraj Infotech</p>
+            <ul class="exp__list">
+              <li>Built responsive website for real client</li>
+              <li>Honoured to work as a team leader</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__tag">05 — Projects</span>
+          <h2 class="section__title">What I've <em>Built</em></h2>
+        </div>
+        <div class="projects__cards">
+          <a href="uiuxprojects.html" class="project__card project__card--uiux reveal">
+            <div class="project__card-glow"></div>
+            <div class="project__card-content">
+              <div class="project__icon"><i class="fa-solid fa-pen-ruler"></i></div>
+              <h3>UI/UX Projects</h3>
+              <p>Wireframes, prototypes, and design systems crafted in Figma — focused on user-centered design
+                principles.</p>
+              <div class="project__tags">
+                <span>Figma</span><span>Wireframes</span><span>Prototyping</span>
+              </div>
+              <span class="project__cta">Explore <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="frontendprojects.html" class="project__card project__card--frontend reveal">
+            <div class="project__card-glow"></div>
+            <div class="project__card-content">
+              <div class="project__icon"><i class="fa-solid fa-code"></i></div>
+              <h3>Frontend Projects</h3>
+              <p>Interactive web applications built with React, Next.js, Three.js and modern frontend technologies.</p>
+              <div class="project__tags">
+                <span>React</span><span>Next.js</span><span>Three.js</span>
+              </div>
+              <span class="project__cta">Explore <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="certifications section" id="certifications">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__tag">06 — Certifications</span>
+          <h2 class="section__title">My <em>Credentials</em></h2>
+        </div>
+        <div class="cert__grid">
+          <div class="cert__card reveal">
+            <div class="cert__badge"><i class="fa-solid fa-certificate"></i></div>
+            <div class="cert__info">
+              <h3>UI/Ux</h3>
+              <p>Coursera</p>
+            </div>
+            <a href="certificates/UIUX.pdf" class="cert__link" title="View Certificate"><i class="fa-solid fa-external-link"></i></a>
+          </div>
+          <div class="cert__card reveal">
+            <div class="cert__badge"><i class="fa-solid fa-certificate"></i></div>
+            <div class="cert__info">
+              <h3>CSS3</h3>
+              <p>Infosys</p>
+            </div>
+            <a href="certificates/CSS INFOSYS.pdf" class="cert__link" title="View Certificate"><i class="fa-solid fa-external-link"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__tag">07 — Contact</span>
+          <h2 class="section__title">Let's <em>Connect</em></h2>
+        </div>
+        <p class="contact__sub reveal">I'm always open to new opportunities, collaborations, or just a friendly chat.
+          Reach out!</p>
+        <div class="contact__links reveal">
+          <a href="https://github.com/harshrajd3002" target="_blank" class="contact__link contact__link--github">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://figma.com/" target="_blank" class="contact__link contact__link--figma">
+            <i class="fa-brands fa-figma"></i>
+            <span>Figma</span>
+          </a>
+          <a href="https://linkedin.com/in/harshrajsinhbapu" target="_blank"
+            class="contact__link contact__link--linkedin">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:dharshraj39@gmail.com" class="contact__link contact__link--gmail">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Gmail</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="footer__logo">Harshraj Dodiya<span>.</span></a>
+      <p class="footer__copy">Crafted with <i class="fa-solid fa-heart"></i> by <strong>HG DODIYA</strong> © 2025</p>
+      <a href="#home" class="footer__top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
